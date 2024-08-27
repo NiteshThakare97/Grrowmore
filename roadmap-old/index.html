@@ -85,22 +85,6 @@
             background: none !important;
             padding: 0 !important;
         }
-        
-        .why-us {
-            padding: 3rem 0 3rem !important;
-            /* position: relative; */
-            margin-top: 0px !important;
-            /* z-index: 1; */
-            background-image: url(../wp-content/images/About_Us_Sec_5_BG-01.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            .dep {
-                padding: 4px !important;
-            }
-        }
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://garantiwebdesign.com/wordpress/technit/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' media='all' />
     <link rel='stylesheet' id='classic-theme-styles-css' href='https://garantiwebdesign.com/wordpress/technit/wp-includes/css/classic-themes.min.css?ver=1' media='all' />
@@ -466,6 +450,159 @@
         };
     </script>
     <style>
+        /* scss  roadmap */
+        
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font: normal 10.6666666667px 'Titillium Web', sans-serif;
+            background: linear-gradient(54deg, #9164ff, #8bfff4);
+            color: #3c3f64;
+            /* overflow-x: hidden; */
+        }
+        
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 50px;
+            background: #fff;
+        }
+        
+        .timeline ul li::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%) rotate(45deg);
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+            background: #eee;
+        }
+        
+        .timeline ul li div {
+            position: relative;
+            bottom: 0;
+            width: 400px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline ul li div time {
+            position: absolute;
+            background: #f5af19;
+            width: auto;
+            height: 30px;
+            top: -15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 2px;
+            padding: 10px;
+        }
+        
+        .timeline ul li div div {
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .timeline ul li div div p {
+            text-align: center;
+        }
+        
+        .timeline ul li div .discovery {
+            margin-right: 10px;
+        }
+        
+        .timeline ul li:nth-of-type(odd)>div {
+            left: 45px;
+        }
+        
+        .timeline ul li:nth-of-type(even)>div {
+            left: -439px;
+        }
+        
+        .timeline ul li div {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .timeline ul li:nth-of-type(odd) div {
+            transform: translate3d(100px, -10px, 0) rotate(10deg);
+        }
+        
+        .timeline ul li:nth-of-type(even) div {
+            transform: translate3d(-100px, -10px, 0) rotate(10deg);
+        }
+        
+        .timeline ul li.in-view div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        @media screen and (max-width: 900px) {
+            .timeline ul li div {
+                width: 250px;
+                flex-direction: column;
+            }
+            .timeline ul li div div {
+                width: 100%;
+                margin: 10px;
+                height: 440px;
+            }
+            .timeline ul li:nth-of-type(even)>div {
+                left: -89px;
+            }
+            .timeline ul li:nth-of-type(odd)>div {
+                left: -115px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            body {
+                background: linear-gradient(54deg, #9164ff, #8bfff4);
+            }
+            .timeline ul li {
+                margin-left: 20px;
+            }
+            .timeline ul li div {
+                width: calc(100vw - 91px);
+            }
+            .timeline ul li:nth-of-type(even)>div {
+                left: 45px;
+            }
+            .timeline ul li:nth-of-type(odd)>div {
+                left: 45px;
+            }
+            .timeline ul li div div {
+                height: 380px;
+            }
+        }
+        
+        .timeline h1,
+        .timeline p,
+        .timeline span {
+            color: #000;
+        }
+        
         .swiper-pagination-bullet {
             margin-left: 5px;
         }
@@ -506,17 +643,8 @@
             border-bottom-color: #9a60ee;
         }
         
-        .card {
-            padding: 20px;
-        }
-        
-        .card-sub img {
-            height: 500px;
-            border: 1px solid #d5dae5;
-        }
-        
         .custom-button {
-            background: linear-gradient(45deg, #9e65f0, #6f29d9);
+            background: #9a60ee;
             font-weight: 600;
         }
         
@@ -533,7 +661,7 @@
         }
         
         .custom-button:hover {
-            background: linear-gradient(45deg, #54e4d3, #1b8dea);
+            background: #25599e;
         }
         
         .custom-button12 {
@@ -2497,6 +2625,34 @@
             border-top: 3px solid #9a60ee;
         }
         
+        .hakkimizda-bolumu-anasayfa {
+            background: ;
+        }
+        
+        .hakkimizda-bolumu-anasayfa2 {
+            background: ;
+        }
+        
+        .team-section {
+            background: ;
+        }
+        
+        .team-section2 {
+            background: ;
+        }
+        
+        .why-us {
+            background: ;
+        }
+        
+        .processs {
+            background: ;
+        }
+        
+        .special-paket-alani {
+            background: ;
+        }
+        
         .faqs {
             background: #9a60ee;
         }
@@ -2883,8 +3039,8 @@
         }
         
         body {
-            overflow-y: scroll;
-            overflow-x: hidden;
+            /* overflow-y: scroll;
+      overflow-x: hidden; */
             color: #000000;
             font-family: Outfit;
             font-size: 16px;
@@ -4118,13 +4274,12 @@ responsive
             FONT-WEIGHT: 600;
             font-size: 65px;
         }
-        
-        @media (min-width: 100px) and (max-width: 1300px) {
-            body {
-                overflow-y: scroll;
-                overflow-x: hidden;
-            }
-        }
+        /* @media (min-width: 100px) and (max-width: 1300px) {
+      body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+    } */
         
         .footer .copyright {
             color: #fff;
@@ -4406,7 +4561,7 @@ responsive
 
 
 
-    <title>Legal - Grrowmore</title>
+    <title>Roadmap - Grrowmore</title>
 
 
     <link rel="shortcut icon" type="image/png" href="../wp-content/images/favicon.png">
@@ -4579,102 +4734,153 @@ responsive
             <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
         </div>
     </nav>
-    <header class="page-header" style="height: 0px;">
-
+    <header class="page-header" style="background-image: url(../wp-content/images/contactmainbanner.png); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <h2 style="justify-content: flex-start;">Roadmap</h2>
+        </div>
+        <!-- end container -->
     </header>
 
-    <!-- Marquee Tag  -->
-    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en" class="coin-marquee"></coingecko-coin-price-marquee-widget>
-    <!-- Marquee Tag  -->
-
     <main>
-        <!--İletişim Form Alanı-->
-        <section class="iletisim-form-alani">
-            <div class="container">
-
-                <!-- New Certificates -->
-                <div class="row" style="justify-content: space-evenly;">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-sub">
-                                <!-- <a class="image-link" href="../wp-content/images/Certificate.jpg">
-                <img src="../wp-content/images/Certificate.jpg" alt="" width="200%" height="auto">
-              </a> -->
-                                <a href="" onclick="window.open('../wp-content/images/Certificate.jpg', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=100%, height=215px, top=25px left=120px'); return false;" target="_self">
-                                    <img src="../wp-content/images/Certificate.jpg" alt="">
-                                </a>
-                                <p style="padding-top: 15px; text-align: center;">CERTIFICATE OF FACT OF <br> GOOD STANDING</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-sub">
-                                <a href="" onclick="window.open('../wp-content/images/GRROW_MORE_LTD_INCORPORATION_CERTIFICATE.jpg', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=100%, height=215px, top=25px left=120px'); return false;" target="_self">
-                                    <img src="../wp-content/images/GRROW_MORE_LTD_INCORPORATION_CERTIFICATE.jpg" alt="">
-                                </a>
-                                <p style="padding-top: 15px; text-align: center;">CERTIFICATE OF INCORPORATION OF A PRIVATE LIMITED COMPANY
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- New Certificates -->
-            </div>
-        </section>
-
-
-        <!-- <section class="why-us">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="h-yazi-ortalama h-yazi-margin-orta-3">
-              <h2 class="h2-baslik-hizmetler-2 wow fadeInLeft" data-wow-delay="0.4s"> About Company</h2>
-            </div>
+        <!--İletişim İcon Alanı-->
+        <!-- <section class="iletisim-icon-alani">
+      <div class="tablo">
+        <div class="tablo--1-ve-3 wow fadeInLeft" data-wow-delay="0.5s">
+          <div class="ozellik-kutu-iletisim" onclick="location.href='#';" style="cursor:pointer;">
+            <div class="icon"><i class="flaticon-headphones"></i></div>
+            <h3 class="baslik-4 h-yazi-margin-kucuk-2">Customer service</h3>
+            <p class="ozellik-kutu-iletisim--yazi">
+              +1 (234) 567 89 10 </p>
           </div>
         </div>
-      </div>
-      <div class="bosluk333"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 ds wow zoomIn" data-wow-delay="0.5s">
-            <div class="dep">
-              <div class="or56">
-                <div class="bosluk333"></div>
-                <h3 class="prongl">COMPANY NUMBER COLORADO:</h3>
-                <h4 class="infostextgl">20231256875 </h4> <br>
-                <h3 class="prongl">COMPANY ADDRESS:</h3>
-                <h4 class="infostextgl">1942 Broadway Street, STE 314C, <br> Boulder CO 80302 US</h4> <br>
-                <h3 class="prongl">COMPANY ADMIN PHONE NUMBER:</h3>
-                <h4 class="infostextgl">+1 (341) 202-0686</h4> <br>
-                <h3 class="prongl">VERIFICATION LINK:</h3>
-                <h4 class="infostextgl"><a
-                    href="https://www.sos.state.co.us/ucc/pages/biz/bizSearch.xhtml">https://www.sos.state.co.us/ucc/pages<br>/biz/bizSearch.xhtml</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 ds wow zoomIn" data-wow-delay="0.6s">
-            <div class="dep">
-              <div class="or56">
-                <div class="bosluk333"></div>
-                <h3 class="prongl">COMPANY NUMBER:</h3>
-                <h4 class="infostextgl">14738304 </h4> <br>
-                <h3 class="prongl">COMPANY ADDRESS:</h3>
-                <h4 class="infostextgl">High Road Chadwell Heath, Essex, United Kingdom, RM6 6AX</h4> <br>
-                <h3 class="prongl">COMPANY ADMIN PHONE NUMBER:</h3>
-                <h4 class="infostextgl"> +447723877265</h4> <br>
-                <h3 class="prongl">VERIFICATION LINK:</h3>
-                <h4 class="infostextgl"><a
-                    href="https://find-and-update.company-information.service.gov.uk/search?q=14738304">https://find-and-update.company-information.service.gov.uk/search?q=14738304</a>
-                </h4>
-              </div>
-            </div>
+
+
+
+
+
+        <div class="tablo--1-ve-3 wow fadeInLeft" data-wow-delay="0.5s">
+          <div class="ozellik-kutu-iletisim" onclick="location.href='#';" style="cursor:pointer;">
+            <div class="icon"><i class="flaticon-email"></i></div>
+            <h3 class="baslik-4 h-yazi-margin-kucuk-2">Mail Address</h3>
+            <p class="ozellik-kutu-iletisim--yazi">
+              example@example.com </p>
           </div>
         </div>
+
+
+
+
+
+        <div class="tablo--1-ve-3 wow fadeInRight" data-wow-delay="0.5s">
+          <div class="ozellik-kutu-iletisim" onclick="location.href='#';" style="cursor:pointer;">
+            <div class="icon"><i class="flaticon-location"></i></div>
+            <h3 class="baslik-4 h-yazi-margin-kucuk-2">Office</h3>
+            <p class="ozellik-kutu-iletisim--yazi">
+              Yeşilpınar Mh. Tepe Sk. Eyüp İstanbul </p>
+          </div>
+        </div>
+
+
+
+
+
       </div>
+
+
     </section> -->
+
+        <!--İletişim Form Alanı-->
+        <section class="timeline">
+            <div>
+                <h2 style="text-align: center; font-size: 40px; padding-top: 40px; padding-bottom: 20px;">Roadmap</h2>
+            </div>
+            <ul>
+                <li>
+                    <div>
+                        <time>2020 November</time>
+                        <div class="discovery">
+                            <p>
+                                Idea and Concept creation of Digital Global Bank.
+                            </p>
+                            <p>Market analysis and research.</p>
+                            <p>Concept, Plan & Team assemble.</p>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2022 March</time>
+                        <div class="discovery">
+                            <p>
+                                In less than a year, we have created a record in itself. We successfully mined $8 million worth of portfolio offline in just under a year.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2022 September</time>
+                        <div class="discovery">
+                            <p>
+                                The team at Grrowmore has been working hard for the past 1 year for sustaining and maintaining the portfolio of the company at higher profits. We started receiving requests worldwide for small investors to participate in our successful journey. The company
+                                reserve funds were capable enough for us to expand globally, and we were all set to launch grrowmore official website globally in February.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2023 February</time>
+                        <div class="discovery">
+                            <p>
+                                Launch of Grrowmore. com globally with a user-friendly and experienced team of people in Crypto, Forex, Bullion, and various other members from different sectors to participate in the success journey.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2023 October</time>
+                        <div class="discovery">
+                            <p>
+                                The company's founders aim to establish an ecosystem where users can stay and think of new ideas as well as have a variety of options to invest in the platform.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2024 January</time>
+                        <div class="discovery">
+                            <p>
+                                Grrowmore will be the one-stop solution for all your needs.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2024 June</time>
+                        <div class="discovery">
+                            <p>
+                                Our new wallet will have decentralized messaging functions that allow secure inter-wallet communication.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time>2024 December</time>
+                        <div class="discovery">
+                            <p>
+                                Our target is to reach 100 million worth of portfolio.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </main>
     <!-- <p><iframe loading="lazy" style="border: 0;"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563266.1918335108!2d-75.84536893896656!3d40.06973977396647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0fb959e00409f%3A0x2cd27b07f83f6d8d!2sNew%20Jersey%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1645136392814!5m2!1str!2str"
@@ -4709,7 +4915,8 @@ responsive
                         <li><a href="https://user.grrowmore.com/authenticate.aspx">Login</a></li>
                         <li><a href="https://user.grrowmore.com/gbtregister.aspx">Sign Up</a></li>
                     </ul>
-                    <div class="bosluk333"></div>
+                    <div class="bosluk33                                                                                          3">
+                    </div>
                     <!-- end row -->
                 </div>
                 <!-- end col-2 -->
@@ -4718,19 +4925,18 @@ responsive
                     <h6 class="widget-title" style="text-align: left; margin-top: 23px; margin-bottom: 0px;">Contact Us
                     </h6>
 
-                    <!-- <div class="container d445">
-            <div class="row">
-              <div class="col-lg-12 lefthealtfooter">
-                <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
-                  <div class="col-lg-12">
-                    <p class="h2-baslik-anasayfa-wthe wow fade" style="color: #fff;"><i class="fa fa-envelope"
-                        style="color: #fff;"></i>&nbsp;&nbsp;&nbsp;
-                      info@grrowmore.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+                    <div class="container d445">
+                        <div class="row">
+                            <div class="col-lg-12 lefthealtfooter">
+                                <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
+                                    <div class="col-lg-12">
+                                        <p class="h2-baslik-anasayfa-wthe wow fade" style="color: #fff;"><i class="fa fa-envelope" style="color: #fff;"></i>&nbsp;&nbsp;&nbsp; info@grrowmore.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container d445">
                         <div class="row">
                             <div class="col-lg-12 lefthealtfooter">
@@ -4753,6 +4959,7 @@ responsive
                                         <p class="h2-baslik-anasayfa-wthe wow fade" style="color: #fff;">
                                             +919152487296 <br> India number</p>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -4766,6 +4973,7 @@ responsive
                                         <p class="h2-baslik-anasayfa-wthe wow fade" style="color: #fff;">
                                             +1 (341) 202-0686 <br> USA number</p>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -4783,6 +4991,7 @@ responsive
                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a
                         href="https://twitter.com/grrow_more?t=Smr0UeOqFvvtEHaSl2dgnw&s=09"><i
                           class="fab fa-twitter"></i></a></h2>
+                    
                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://youtube.com/@grrowmore"><i
                           class="fab fa-youtube"></i></a>
                     </h2>
@@ -4821,17 +5030,18 @@ responsive
                             <div class="row yk" onclick="location.href='#';" style="cursor:pointer;">
                                 <div class="col-lg-12" style="display: flex;     justify-content: center; padding-top: 0px;">
                                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://www.facebook.com/profile.php?id=100089567754746&mibextid=ZbWKwL"><i
-                                      class="fab fa-facebook"></i></a></h2>
+                        class="fab fa-facebook"></i></a></h2>
                                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://www.instagram.com/grrow.more/"><i
-                                      class="fab fa-instagram-square"></i></a></h2>
+                        class="fab fa-instagram-square"></i></a></h2>
                                     <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://twitter.com/grrow_more?t=Smr0UeOqFvvtEHaSl2dgnw&s=09"><i
-                                      class="fab fa-twitter"></i></a></h2>
+                        class="fab fa-twitter"></i></a></h2>
                                     <!-- <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://pin.it/R6iLS0H"><i
                                       class="fab fa-pinterest-square"></i></a></h2>
                           <h2 class="h2-baslik-anasayfa-wthe wow fade"><a
                                   href="https://grrowmore.medium.com/"><i class="fab fa-medium"></i></a>
                           </h2> -->
-                                    <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://youtube.com/@grrowmore"><i class="fab fa-youtube"></i></a>
+                                    <h2 class="h2-baslik-anasayfa-wthe wow fade"><a href="https://youtube.com/@grrowmore"><i
+                        class="fab fa-youtube"></i></a>
                                     </h2>
                                 </div>
                             </div>
@@ -4862,6 +5072,34 @@ responsive
 
     <!-- google translate ends -->
 
+    <script>
+        var items = document.querySelectorAll(".timeline li");
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function callbackFunc() {
+            for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                    if (!items[i].classList.contains("in-view")) {
+                        items[i].classList.add("in-view");
+                    }
+                } else if (items[i].classList.contains("in-view")) {
+                    items[i].classList.remove("in-view");
+                }
+            }
+        }
+
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+    </script>
     <script src='https://garantiwebdesign.com/wordpress/technit/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
     <script src='https://garantiwebdesign.com/wordpress/technit/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
     <script id='contact-form-7-js-extra'>
@@ -4891,17 +5129,11 @@ responsive
 
     })
   </script> -->
-    <script>
-        $(document).ready(function() {
-            $('.template-article img').each(function() {
-                var currentImage = $(this);
-                currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-            });
-            $('.image-link').magnificPopup({
-                type: 'image'
-            });
-        });
-    </script>
+
+    <!-- Marquee Tag  -->
+    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en" class="coin-marquee"></coingecko-coin-price-marquee-widget>
+    <!-- Marquee Tag  -->
 </body>
 
 </html>
